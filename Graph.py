@@ -45,6 +45,7 @@ class Graph:
                     visited[i] = True
 
     # Function to print a DFS of graph
+
     def dfsFunc(self, s, visited):
         visited[s] = True
         print(s)
@@ -53,6 +54,7 @@ class Graph:
                 self.dfsFunc(i, visited)
 
     # Function for preparation of DFS traversal
+
     def DFS(self, s):
         visited = [False] * (self.maxNode() + 1)
         self.dfsFunc(s, visited)
