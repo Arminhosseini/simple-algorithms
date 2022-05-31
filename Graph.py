@@ -44,6 +44,19 @@ class Graph:
                     queue.append(i)
                     visited[i] = True
 
+    # Function to print a DFS of graph
+    def dfsFunc(self, s, visited):
+        visited[s] = True
+        print(s)
+        for i in self.graph[s]:
+            if visited[i] == False:
+                self.dfsFunc(i, visited)
+
+    # Function for preparation of DFS traversal
+    def DFS(self, s):
+        visited = [False] * (self.maxNode() + 1)
+        self.dfsFunc(s, visited)
+
 
 g = Graph()
 g.addEdge(0, 1)
@@ -53,4 +66,4 @@ g.addEdge(1, 4)
 g.addEdge(2, 5)
 g.addEdge(2, 6)
 
-g.BFS(0)
+g.DFS(0)
